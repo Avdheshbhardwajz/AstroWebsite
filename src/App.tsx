@@ -12,14 +12,14 @@ import TestimonialsSection from "./TestimonialSection";
 import TrainerProfile from "./TrainerProfile";
 
 // Define interfaces for props
-interface PopupProps {
-  openPopup: () => void;
-}
+// interface PopupProps {
+//   openPopup: () => void;
+// }
 
-interface PopupFormProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
+// interface PopupFormProps {
+//   isOpen: boolean;
+//   onClose: () => void;
+// }
 
 const App: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);

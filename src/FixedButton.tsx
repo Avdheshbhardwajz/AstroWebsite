@@ -5,12 +5,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Timer, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "./components/ui/button";
 
-const FixedButton = ({ openPopup }) => {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft());
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+interface FixedButtonProps {
+  openPopup: () => void;
+}
 
-  function getTimeLeft() {
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+}
+
+const FixedButton = ({ openPopup }: FixedButtonProps): JSX.Element => {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(getTimeLeft());
+  const [isVisible, setIsVisible] = useState<boolean>(true);
+  const [lastScrollY, setLastScrollY] = useState<number>(0);
+
+  function getTimeLeft(): TimeLeft {
     const expiryDate = new Date("2024-11-10T23:59:59");
     const now = new Date();
     const difference = expiryDate.getTime() - now.getTime();
@@ -48,7 +58,7 @@ const FixedButton = ({ openPopup }) => {
   }, []);
 
   const handleButtonClick = () => {
-    openPopup(); // Call the openPopup function passed as prop
+    openPopup();
   };
 
   return (
