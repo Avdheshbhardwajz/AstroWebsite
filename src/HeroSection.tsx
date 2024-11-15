@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, Globe, Video, Check, ArrowRight } from "lucide-react";

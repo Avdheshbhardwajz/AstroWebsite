@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ScrollText, Book, Star, Sparkles } from "lucide-react";
 import { Card, CardContent } from "./components/ui/card";
 import { Badge } from "./components/ui/badge";
-import React from "react";
 
 export default function TrainerProfile() {
   const achievements = [
