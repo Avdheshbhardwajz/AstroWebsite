@@ -88,16 +88,16 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
             transition={{ type: "spring", damping: 15 }}
             className="w-full max-w-md"
           >
-            <Card className="bg-gradient-to-br font-poppins from-[#892b36] to-[#5d1d24] border-[#d4ab71]/30 shadow-2xl">
+            <Card className="bg-gradient-to-br font-poppins from-[#1B2B3B] to-[#0F1922] border-[#FF6B2C]/30 shadow-2xl">
               <CardHeader className="relative">
                 <Button
                   onClick={onClose}
                   variant="ghost"
-                  className="absolute right-4 top-4 text-[#d4ab71] hover:text-[#f1c889] transition-colors"
+                  className="absolute right-4 top-4 text-white hover:text-[#FF6B2C] transition-colors"
                 >
                   <X size={24} />
                 </Button>
-                <CardTitle className="text-2xl font-bold text-center text-[#d4ab71]">
+                <CardTitle className="text-2xl font-bold text-center text-white">
                   {submitted ? "Thank You!" : "Enter Your Details"}
                 </CardTitle>
               </CardHeader>
@@ -108,8 +108,8 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center"
                   >
-                    <Sparkles className="w-16 h-16 text-[#f1c889] mx-auto mb-4" />
-                    <p className="text-[#d4ab71] text-lg">
+                    <Sparkles className="w-16 h-16 text-[#FF6B2C] mx-auto mb-4" />
+                    <p className="text-white text-lg">
                       Your details have been successfully submitted.
                     </p>
                   </motion.div>
@@ -126,7 +126,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                       { name: "state", label: "State", type: "text" },
                     ].map((field) => (
                       <div key={field.name}>
-                        <Label htmlFor={field.name} className="text-[#d4ab71]">
+                        <Label htmlFor={field.name} className="text-white">
                           {field.label}
                         </Label>
                         <Input
@@ -135,11 +135,11 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                           name={field.name}
                           value={formData[field.name as keyof typeof formData]}
                           onChange={handleChange}
-                          className="bg-[#892b36]/50 border-[#d4ab71]/30 text-[#d4ab71] placeholder-[#d4ab71]/50 focus:border-[#f1c889] focus:ring-[#f1c889]"
+                          className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 text-white placeholder-white/50 focus:border-[#FF6B2C] focus:ring-[#FF6B2C]"
                           placeholder={`Enter your ${field.label.toLowerCase()}`}
                         />
                         {errors[field.name] && (
-                          <p className="text-[#f1c889] text-sm mt-1">
+                          <p className="text-[#FF6B2C] text-sm mt-1">
                             {errors[field.name]}
                           </p>
                         )}
@@ -147,7 +147,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                     ))}
                     <Button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-[#d4ab71] to-[#f1c889] text-[#892b36] hover:from-[#c39a60] hover:to-[#e0b778] transition-colors"
+                      className="w-full bg-[#FF6B2C] hover:bg-[#FF8F6B] text-white transition-colors"
                     >
                       Submit
                     </Button>

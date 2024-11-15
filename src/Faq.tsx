@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -51,37 +50,40 @@ export default function Faq() {
   ];
 
   return (
-    <section className="relative py-16 bg-gradient-to-br from-[#892b36] to-[#5d1d24] font-poppins overflow-hidden">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YWI3MSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30"></div>
+    <section className="relative py-16 bg-gradient-to-br from-[#1B2B3B] to-[#0F1922] font-poppins overflow-hidden">
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGNkIyQyIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30"></div>
       <div className="max-w-4xl mx-auto px-4 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-center mb-12 text-[#d4ab71]"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-white"
         >
-          Frequently Asked Questions
+          Frequently Asked{" "}
+          <span className="text-[#FF6B2C] bg-gradient-to-r from-[#FF6B2C] to-[#FF8F6B] bg-clip-text text-transparent">
+            Questions
+          </span>
         </motion.h2>
-        <Card className="bg-[#892b36]/50 border-[#d4ab71] backdrop-blur-sm shadow-xl  p-8">
+        <Card className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 backdrop-blur-sm shadow-xl p-4 md:p-8">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem
                 value={`item-${index}`}
                 key={index}
-                className="border-b border-[#d4ab71]/30 last:border-b-0"
+                className="border-b border-[#FF6B2C]/30 last:border-b-0"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-[#d4ab71] hover:text-[#f1c889] transition-colors duration-300 py-6">
+                <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-white hover:text-[#FF6B2C] transition-colors duration-300 py-4 md:py-6">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="flex items-center w-full"
                   >
-                    <HelpCircle className="w-6 h-6 mr-3 flex-shrink-0" />
+                    <HelpCircle className="w-5 h-5 md:w-6 md:h-6 mr-3 flex-shrink-0 text-[#FF6B2C]" />
                     <span>{faq.question}</span>
                   </motion.div>
                 </AccordionTrigger>
-                <AccordionContent className="text-[#d4ab71] opacity-90 pb-6">
+                <AccordionContent className="text-white/80 text-sm md:text-base pb-4 md:pb-6">
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -95,8 +97,31 @@ export default function Faq() {
           </Accordion>
         </Card>
       </div>
-      <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-[#d4ab71] rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute -top-20 -left-20 w-40 h-40 bg-[#d4ab71] rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+      <motion.div
+        className="absolute -bottom-20 -right-20 w-40 h-40 bg-[#FF6B2C] rounded-full filter blur-3xl opacity-20"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      ></motion.div>
+      <motion.div
+        className="absolute -top-20 -left-20 w-40 h-40 bg-[#FF6B2C] rounded-full filter blur-3xl opacity-20"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
+      ></motion.div>
     </section>
   );
 }

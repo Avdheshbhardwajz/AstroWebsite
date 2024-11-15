@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import { motion } from "framer-motion";
 import {
   Video,
@@ -34,8 +34,8 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="relative font-poppins bg-gradient-to-br from-[#892b36] to-[#5d1d24] py-16 px-4 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YWI3MSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
+    <section className="relative font-poppins bg-gradient-to-br from-[#1B2B3B] to-[#0F1922] py-16 px-4 overflow-hidden">
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGNkIyQyIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -48,10 +48,10 @@ export default function HowItWorks() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold mb-6 text-[#d4ab71]"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white"
           >
             How Does{" "}
-            <span className="text-[#f1c889]">
+            <span className="text-[#FF6B2C] bg-gradient-to-r from-[#FF6B2C] to-[#FF8F6B] bg-clip-text text-transparent">
               Ameda-Shleshma Shuddhi Chikitsa
             </span>{" "}
             Work?
@@ -62,12 +62,12 @@ export default function HowItWorks() {
             transition={{ delay: 0.3 }}
             className="space-y-4"
           >
-            <p className="text-lg text-[#d4ab71] max-w-4xl mx-auto opacity-90">
+            <p className="text-lg md:text-xl text-white/80 max-w-4xl mx-auto">
               Kumbhak Therapy is at the core of Ameda-Shleshma Shuddhi Chikitsa,
               a natural, holistic solution designed to balance your body's
               metabolism, strength, and energy.
             </p>
-            <p className="text-lg text-[#d4ab71] max-w-4xl mx-auto opacity-90">
+            <p className="text-lg md:text-xl text-white/80 max-w-4xl mx-auto">
               Unlike fad diets or extreme workouts that focus on short-term
               results, Kumbhak Therapy works on the principle of controlled
               breathing and metabolism enhancement, tackling the root cause of
@@ -85,15 +85,15 @@ export default function HowItWorks() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 + index * 0.1 }}
             >
-              <Card className="bg-[#892b36]/50 border-[#d4ab71]/30 backdrop-blur-sm hover:border-[#d4ab71] transition-colors h-full">
+              <Card className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 backdrop-blur-sm hover:border-[#FF6B2C] transition-colors h-full group hover:shadow-lg hover:shadow-[#FF6B2C]/20">
                 <CardContent className="p-6 text-center">
-                  <div className="bg-[#d4ab71]/10 rounded-full p-4 w-16 h-16 mx-auto mb-4">
-                    <feature.icon className="w-8 h-8 text-[#d4ab71]" />
+                  <div className="bg-[#FF6B2C]/10 rounded-full p-4 w-20 h-20 mx-auto mb-4 group-hover:bg-[#FF6B2C]/20 transition-colors">
+                    <feature.icon className="w-12 h-12 text-[#FF6B2C]" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-[#f1c889]">
+                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#FF6B2C] transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-[#d4ab71] opacity-90">
+                  <p className="text-white/70 group-hover:text-white/90 transition-colors">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -106,25 +106,25 @@ export default function HowItWorks() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="text-center space-y-4"
+          className="text-center space-y-6"
         >
-          <Button className="bg-gradient-to-r from-[#d4ab71] to-[#f1c889] text-[#892b36] hover:from-[#c39a60] hover:to-[#e0b778] font-bold text-xl px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center gap-2">
+          <Button className="bg-[#FF6B2C] hover:bg-[#FF8F6B] text-white font-bold text-lg sm:text-xl px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B2C]/50 flex items-center justify-center gap-2">
             REGISTER NOW FOR FREE
             <ArrowRight className="h-6 w-6" />
           </Button>
           <div className="max-w-md mx-auto space-y-2">
-            <Progress value={75} className="h-2 bg-[#d4ab71]/20">
-              <div className="h-full bg-[#d4ab71] rounded-full" />
+            <Progress value={75} className="h-3 bg-[#FF6B2C]/20">
+              <div className="h-full bg-[#FF6B2C] rounded-full" />
             </Progress>
-            <p className="text-sm text-[#d4ab71] opacity-90">
+            <p className="text-sm sm:text-base text-[#FF6B2C]">
               Limited to only 500 Participants!
             </p>
           </div>
         </motion.div>
       </motion.div>
 
-      <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-[#d4ab71] rounded-full filter blur-3xl opacity-20 animate-pulse" />
-      <div className="absolute -top-20 -left-20 w-40 h-40 bg-[#d4ab71] rounded-full filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-[#FF6B2C] rounded-full filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute -top-20 -left-20 w-40 h-40 bg-[#FF6B2C] rounded-full filter blur-3xl opacity-20 animate-pulse" />
     </section>
   );
 }

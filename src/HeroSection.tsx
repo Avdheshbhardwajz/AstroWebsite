@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, Globe, Video, Check, ArrowRight } from "lucide-react";
@@ -47,8 +48,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-br from-[#892b36] to-[#5d1d24] min-h-screen text-[#d4ab71] py-16 px-4 overflow-hidden font-poppins">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YWI3MSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
+    <section className="relative bg-gradient-to-br from-[#1B2B3B] to-[#0F1922] min-h-screen text-white py-16 px-4 overflow-hidden font-poppins">
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -57,17 +58,17 @@ export default function HeroSection() {
         className="max-w-7xl mx-auto relative z-10"
       >
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Discover The Long-Term{" "}
-            <span className="text-[#f1c889]">Weight Management Solution</span>{" "}
+            <span className="text-[#FF6B2C]">Weight Management Solution</span>{" "}
             Without{" "}
-            <span className="underline decoration-2 decoration-[#d4ab71]">
+            <span className="underline decoration-2 decoration-[#FF6B2C]">
               Restrictive Diets, Hard Exercise Or Protein Shakes
             </span>
           </h1>
-          <p className="text-xl md:text-2xl">
+          <p className="text-lg sm:text-xl md:text-2xl">
             Feel Lighter, Healthier, And More Energized By Using{" "}
-            <span className="text-[#f1c889] font-semibold">
+            <span className="text-[#FF6B2C] font-semibold">
               Kumbhak Therapy
             </span>{" "}
             Which Addresses The{" "}
@@ -79,7 +80,7 @@ export default function HeroSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-6">
-            <Card className="bg-[#892b36]/50 border-[#d4ab71]/30 overflow-hidden backdrop-blur-sm">
+            <Card className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 overflow-hidden backdrop-blur-sm">
               <CardContent className="p-0">
                 <img
                   src="https://lps.avisahealing.com/wp-content/uploads/2024/10/avisa1-1.webp"
@@ -98,19 +99,17 @@ export default function HeroSection() {
               ].map((item, index) => (
                 <Card
                   key={index}
-                  className="bg-[#892b36]/50 border-[#d4ab71]/30 backdrop-blur-sm"
+                  className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 backdrop-blur-sm"
                 >
                   <CardContent className="flex items-center p-4">
-                    <div className="bg-[#d4ab71] p-2 rounded-lg mr-3">
-                      <item.icon className="h-6 w-6 text-[#892b36]" />
+                    <div className="bg-[#FF6B2C] p-2 rounded-lg mr-3">
+                      <item.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-[#d4ab71]">
+                      <div className="text-sm font-medium text-[#FF6B2C]">
                         {item.label}
                       </div>
-                      <div className="font-bold text-[#f1c889]">
-                        {item.value}
-                      </div>
+                      <div className="font-bold text-white">{item.value}</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -119,9 +118,9 @@ export default function HeroSection() {
           </div>
 
           <div className="space-y-8">
-            <Card className="bg-[#892b36]/50 border-[#d4ab71]/30 backdrop-blur-sm">
+            <Card className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 backdrop-blur-sm">
               <CardContent className="p-6">
-                <h2 className="text-2xl font-bold text-[#f1c889] mb-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-[#FF6B2C] mb-6">
                   Why Attend This Webinar?
                 </h2>
                 <ul className="space-y-4">
@@ -132,8 +131,10 @@ export default function HeroSection() {
                     "Learn how to manage your weight without cutting out your favorite meals and going to GYM.",
                   ].map((benefit, index) => (
                     <li key={index} className="flex items-start">
-                      <Check className="h-6 w-6 text-[#f1c889] mr-2 flex-shrink-0 mt-1" />
-                      <span className="text-[#d4ab71]">{benefit}</span>
+                      <Check className="h-6 w-6 text-[#FF6B2C] mr-2 flex-shrink-0 mt-1" />
+                      <span className="text-white text-sm sm:text-base">
+                        {benefit}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -141,10 +142,10 @@ export default function HeroSection() {
             </Card>
 
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-center text-[#f1c889]">
+              <h3 className="text-xl sm:text-2xl font-bold text-center text-[#FF6B2C]">
                 Workshop Starts In:
               </h3>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-4 gap-2 sm:gap-4">
                 {[
                   { label: "Days", value: timeLeft.days },
                   { label: "Hours", value: timeLeft.hours },
@@ -153,26 +154,28 @@ export default function HeroSection() {
                 ].map((unit, index) => (
                   <div
                     key={index}
-                    className="bg-[#892b36]/50 border border-[#d4ab71]/30 rounded-lg p-4 text-center backdrop-blur-sm"
+                    className="bg-[#1B2B3B]/50 border border-[#FF6B2C]/30 rounded-lg p-2 sm:p-4 text-center backdrop-blur-sm"
                   >
-                    <div className="text-3xl font-bold text-[#f1c889]">
+                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#FF6B2C]">
                       {unit.value}
                     </div>
-                    <div className="text-sm text-[#d4ab71]">{unit.label}</div>
+                    <div className="text-xs sm:text-sm text-white">
+                      {unit.label}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <Button className="w-full bg-gradient-to-r from-[#d4ab71] to-[#f1c889] text-[#892b36] hover:from-[#c39a60] hover:to-[#e0b778] font-bold text-xl py-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center">
+            <Button className="w-full bg-[#FF6B2C] hover:bg-[#FF6B2C]/90 text-white font-bold text-lg sm:text-xl py-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center">
               REGISTER NOW FOR FREE
               <ArrowRight className="ml-2 h-6 w-6" />
             </Button>
           </div>
         </div>
       </motion.div>
-      <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-[#d4ab71] rounded-full filter blur-3xl opacity-20 animate-pulse" />
-      <div className="absolute -top-20 -left-20 w-40 h-40 bg-[#d4ab71] rounded-full filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-[#FF6B2C] rounded-full filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute -top-20 -left-20 w-40 h-40 bg-[#FF6B2C] rounded-full filter blur-3xl opacity-20 animate-pulse" />
     </section>
   );
 }
