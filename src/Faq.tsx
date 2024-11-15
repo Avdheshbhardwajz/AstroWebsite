@@ -1,10 +1,5 @@
 "use client";
-<<<<<<< HEAD
 import React from "react";
-=======
-
-//import React from "react";
->>>>>>> 9781141f75b711b52ecb1d225ba2c5bd1dc8877e
 import { motion } from "framer-motion";
 import {
   Accordion,
