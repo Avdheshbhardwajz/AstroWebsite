@@ -58,21 +58,24 @@ export default function HeroSection() {
       >
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Discover The Long-Term{" "}
-            <span className="text-[#FF6B2C]">Weight Management Solution</span>{" "}
-            Without{" "}
+            Turn Your Passion for{" "}
+            <span className="text-[#FF6B2C]">
+              Astrology into a Profitable Career
+            </span>{" "}
+            Using{" "}
             <span className="underline decoration-2 decoration-[#FF6B2C]">
-              Restrictive Diets, Hard Exercise Or Protein Shakes
+              Proven Techniques in Just 2 Days!
             </span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl">
-            Feel Lighter, Healthier, And More Energized By Using{" "}
+            Master the Secrets of Predictive Astrology in Just 2 Days– Join Our
+            Free Live Webinar to{" "}
             <span className="text-[#FF6B2C] font-semibold">
-              Kumbhak Therapy
+              Unlock Personal Growth
             </span>{" "}
-            Which Addresses The{" "}
+            and{" "}
             <span className="underline font-semibold">
-              Root Cause Of Weight Issues.
+              Create a Second Income with Confidence
             </span>
           </p>
         </div>
@@ -83,7 +86,7 @@ export default function HeroSection() {
               <CardContent className="p-0">
                 <img
                   src="https://lps.avisahealing.com/wp-content/uploads/2024/10/avisa1-1.webp"
-                  alt="Kumbhak Yogi - Swamy Srii Rajvibhu"
+                  alt="Expert Astrology Trainer"
                   className="w-full h-auto"
                 />
               </CardContent>
@@ -124,10 +127,10 @@ export default function HeroSection() {
                 </h2>
                 <ul className="space-y-4">
                   {[
-                    "To Learn How Ameda-Shleshma Shuddhi Chikitsa Can Help You Transform Your Body Weight.",
-                    "How to avoid short-lived diets, exercise, and medicine without much struggle.",
-                    "Start feeling younger, more vibrant, and free of joint pain or physical discomfort.",
-                    "Learn how to manage your weight without cutting out your favorite meals and going to GYM.",
+                    "To Understand planets, houses, and zodiac signs like never before.",
+                    "Learn how to read and interpret birth charts to make accurate predictions.",
+                    "Turn your passion for astrology into a fulfilling career or a profitable side hustle.",
+                    "Get professional guidance with proven strategies by a 12+ years experienced Astrologer",
                   ].map((benefit, index) => (
                     <li key={index} className="flex items-start">
                       <Check className="h-6 w-6 text-[#FF6B2C] mr-2 flex-shrink-0 mt-1" />

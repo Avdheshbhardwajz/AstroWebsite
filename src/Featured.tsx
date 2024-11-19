@@ -20,12 +20,12 @@ export default function Featured() {
   ];
 
   const questions = [
-    "Do you feel frustrated after trying diet after diet, but nothing works?",
-    "Do you wake up tired, with low energy, and feel like your health is spiraling out of control?",
-    "Are you constantly worrying about the long-term health risks of your weight?",
-    "Are you overwhelmed by conflicting advice on how to lose weight and keep it off?",
-    "Do you feel like you've tried everything, yet nothing seems to stick?",
-    "Are you fearful that if you don't find a solution soon, your health will continue to decline?",
+    "Do you wish you could use astrology to help others, but do not know how to turn it into a real career?",
+    "Have you always been curious about astrology, but feel overwhelmed by the complexity of it all?",
+    "Are you feeling stuck in your current career and dreaming of a more meaningful, fulfilling path?",
+    "Do you want to learn astrology as a way to earn extra income, but aren’t sure how to get started or find clients?",
+    "Are you looking for a side hustle that’s both fulfilling and flexible, where you can help others while making money, all without quitting your current job?",
+    "Do you want to pursue a career in astrology, but don’t know where to start?",
   ];
 
   return (
@@ -70,7 +70,7 @@ export default function Featured() {
           className="text-center mb-12"
         >
           <h2 className="text-2xl sm:text-3xl font-bold text-[#FF6B2C] mb-8">
-            Do You Relate To Any Of These?
+            Do You relate to this?
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
             {questions.map((question, index) => (
