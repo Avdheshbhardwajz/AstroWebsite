@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Calendar, Clock, Globe, Video, Check, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
-
+import heroImage from "/heroSection.jpg";
 export default function HeroSection() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
 
@@ -85,7 +85,7 @@ export default function HeroSection() {
             <Card className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 overflow-hidden backdrop-blur-sm">
               <CardContent className="p-0">
                 <img
-                  src="https://lps.avisahealing.com/wp-content/uploads/2024/10/avisa1-1.webp"
+                  src={heroImage}
                   alt="Expert Astrology Trainer"
                   className="w-full h-auto"
                 />
