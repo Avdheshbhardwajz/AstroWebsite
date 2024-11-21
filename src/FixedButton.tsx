@@ -71,7 +71,7 @@ const FixedButton = ({ openPopup }: FixedButtonProps): JSX.Element => {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="fixed bottom-0 left-0 right-0 z-50"
         >
-          <div className="bg-gradient-to-t from-[#1B2B3B] to-[#0F1922]/95 backdrop-blur-md border-t border-[#FF6B2C]/20 p-4 shadow-lg font-poppins">
+          <div className="bg-gradient-to-t from-white to-gray-100 backdrop-blur-md border-t border-[#FF6B2C]/20 p-4 shadow-lg font-poppins">
             <div className="max-w-6xl mx-auto">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-4">

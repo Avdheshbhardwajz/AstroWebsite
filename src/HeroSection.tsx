@@ -6,6 +6,7 @@ import { Calendar, Clock, Globe, Video, Check, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import heroImage from "/heroSection.jpg";
+
 export default function HeroSection() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
 
@@ -47,8 +48,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-br from-[#1B2B3B] to-[#0F1922] min-h-screen text-white py-16 px-4 overflow-hidden font-poppins">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
+    <section className="relative bg-white min-h-screen text-black py-16 px-4 overflow-hidden font-poppins">
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-10" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -82,7 +83,7 @@ export default function HeroSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-6">
-            <Card className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 overflow-hidden backdrop-blur-sm">
+            <Card className="bg-[#F8F8F8] border-[#FF6B2C]/30 overflow-hidden backdrop-blur-sm">
               <CardContent className="p-0">
                 <img
                   src={heroImage}
@@ -101,7 +102,7 @@ export default function HeroSection() {
               ].map((item, index) => (
                 <Card
                   key={index}
-                  className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 backdrop-blur-sm"
+                  className="bg-[#062031] border-[#FF6B2C]/30 backdrop-blur-sm"
                 >
                   <CardContent className="flex items-center p-4">
                     <div className="bg-[#FF6B2C] p-2 rounded-lg mr-3">
@@ -120,7 +121,7 @@ export default function HeroSection() {
           </div>
 
           <div className="space-y-8">
-            <Card className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 backdrop-blur-sm">
+            <Card className="bg-[#062031] border-[#FF6B2C]/30 backdrop-blur-sm">
               <CardContent className="p-6">
                 <h2 className="text-xl sm:text-2xl font-bold text-[#FF6B2C] mb-6">
                   Why Attend This Webinar?
@@ -156,7 +157,7 @@ export default function HeroSection() {
                 ].map((unit, index) => (
                   <div
                     key={index}
-                    className="bg-[#1B2B3B]/50 border border-[#FF6B2C]/30 rounded-lg p-2 sm:p-4 text-center backdrop-blur-sm"
+                    className="bg-[#062031] border border-[#FF6B2C]/30 rounded-lg p-2 sm:p-4 text-center backdrop-blur-sm"
                   >
                     <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#FF6B2C]">
                       {unit.value}

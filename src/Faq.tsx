@@ -174,21 +174,21 @@ export default function Faq() {
   ];
 
   return (
-    <section className="relative py-16 bg-gradient-to-br from-[#1B2B3B] to-[#0F1922] font-poppins overflow-hidden">
+    <section className="relative py-16 bg-gradient-to-br from-white to-gray-100 text-black font-poppins overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGNkIyQyIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30"></div>
       <div className="max-w-4xl mx-auto px-4 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-white"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-black"
         >
           Frequently Asked{" "}
           <span className="text-[#FF6B2C] bg-gradient-to-r from-[#FF6B2C] to-[#FF8F6B] bg-clip-text text-transparent">
             Questions
           </span>
         </motion.h2>
-        <Card className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 backdrop-blur-sm shadow-xl p-4 md:p-8">
+        <Card className=" border-[#FF6B2C]/30 backdrop-blur-sm shadow-xl p-4 md:p-8">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem
@@ -196,7 +196,7 @@ export default function Faq() {
                 key={index}
                 className="border-b border-[#FF6B2C]/30 last:border-b-0"
               >
-                <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-white hover:text-[#FF6B2C] transition-colors duration-300 py-4 md:py-6">
+                <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-black hover:text-[#FF6B2C] transition-colors duration-300 py-4 md:py-6">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -207,7 +207,7 @@ export default function Faq() {
                     <span>{faq.question}</span>
                   </motion.div>
                 </AccordionTrigger>
-                <AccordionContent className="text-white/80 text-sm md:text-base pb-4 md:pb-6">
+                <AccordionContent className="text-black/80 text-sm md:text-base pb-4 md:pb-6">
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}

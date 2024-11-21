@@ -26,28 +26,19 @@
 //   });
 
 //   const [isSubmitting, setIsSubmitting] = useState(false);
-
-//   // const handleSubmit = async (e: React.FormEvent) => {
-//   //   e.preventDefault();
-//   //   setIsSubmitting(true);
-
-//   //   // Simulate form submission
-//   //   await new Promise((resolve) => setTimeout(resolve, 1000));
-
-//   //   // Reset form
-//   //   setFormData({ name: "", phone: "", city: "", state: "" });
-//   //   setIsSubmitting(false);
-//   // };
+//   const [submitMessage, setSubmitMessage] = useState("");
 
 //   const handleSubmit = async (e: React.FormEvent) => {
 //     e.preventDefault();
 //     setIsSubmitting(true);
+//     setSubmitMessage("");
 
 //     try {
 //       const response = await fetch(
-//         "https://script.google.com/macros/s/AKfycby0xm0FLS33Mzb9PvHglarP8fzjeJRCYKMyFwbXGNg1zZz3QwvTsW2XwivJw6vDXxGOjg/exec",
+//         "https://script.google.com/macros/s/AKfycbwhK2Znwu2Z5HkKEzgwpkK7F8Eafy0rxSv9cFoP-ptnlykOvUn9WSTfypNlEhmy3EnQiQ/exec",
 //         {
 //           method: "POST",
+//           mode: "no-cors",
 //           headers: {
 //             "Content-Type": "application/json",
 //           },
@@ -55,17 +46,20 @@
 //         }
 //       );
 
+//       // if (!response.ok) {
+//       //   throw new Error("Network response was not ok");
+//       // }
+
 //       const result = await response.json();
 //       if (result.success) {
-//         // Reset form and show success message
-//         alert("Form submitted successfully!");
+//         setSubmitMessage("Form submitted successfully!");
 //         setFormData({ name: "", phone: "", city: "", state: "" });
-//       } else {
-//         alert("Failed to submit the form. Please try again.");
-//       }
+//       } //else {
+//       //  setSubmitMessage("Failed to submit the form. Please try again.");
+//       //}
 //     } catch (error) {
 //       console.error("Error submitting the form:", error);
-//       alert("An error occurred. Please try again.");
+//       setSubmitMessage("An error occurred. Please try again.");
 //     }
 
 //     setIsSubmitting(false);
@@ -222,6 +216,12 @@
 //                     )}
 //                   </Button>
 //                 </div>
+
+//                 {submitMessage && (
+//                   <div className="text-center mt-4 text-white">
+//                     {submitMessage}
+//                   </div>
+//                 )}
 //               </form>
 //             </CardContent>
 //           </Card>
@@ -295,17 +295,11 @@ const BookingForm = () => {
         }
       );
 
-      // if (!response.ok) {
-      //   throw new Error("Network response was not ok");
-      // }
-
       const result = await response.json();
       if (result.success) {
         setSubmitMessage("Form submitted successfully!");
         setFormData({ name: "", phone: "", city: "", state: "" });
-      } //else {
-      //  setSubmitMessage("Failed to submit the form. Please try again.");
-      //}
+      }
     } catch (error) {
       console.error("Error submitting the form:", error);
       setSubmitMessage("An error occurred. Please try again.");
@@ -323,7 +317,7 @@ const BookingForm = () => {
   };
 
   return (
-    <section className="relative font-poppins bg-gradient-to-br from-[#1B2B3B] to-[#0F1922] min-h-screen text-white py-16 px-4 overflow-hidden">
+    <section className="relative font-poppins bg-gradient-to-br from-white to-gray-100 min-h-screen text-gray-900 py-16 px-4 overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGNkIyQyIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
 
       <motion.div
@@ -361,7 +355,7 @@ const BookingForm = () => {
         >
           <div className="flex items-center justify-center mb-4">
             <Star className="w-6 h-6 text-[#FF6B2C]" />
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mx-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mx-4">
               Book Your{" "}
               <span className="text-[#FF6B2C] bg-gradient-to-r from-[#FF6B2C] to-[#FF8F6B] bg-clip-text text-transparent">
                 Tarot Journey
@@ -369,7 +363,7 @@ const BookingForm = () => {
             </h1>
             <Star className="w-6 h-6 text-[#FF6B2C]" />
           </div>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
             Embark on a transformative journey through the ancient wisdom of
             Tarot. Join our exclusive workshop where mystical insights meet
             personal growth.
@@ -381,7 +375,7 @@ const BookingForm = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <Card className="bg-[#1B2B3B]/50 backdrop-blur-lg border-[#FF6B2C]/30 shadow-2xl">
+          <Card className="bg-[#062031] border-[#FF6B2C]/30 shadow-2xl">
             <CardContent className="p-6 md:p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -432,9 +426,9 @@ const BookingForm = () => {
                         onChange={handleChange}
                         required
                         className={cn(
-                          "bg-[#1B2B3B]/30 border-[#FF6B2C]/30 text-white",
+                          "bg-white border-[#FF6B2C]/30 text-gray-900",
                           "focus:border-[#FF8F6B] focus:ring-[#FF8F6B]",
-                          "placeholder:text-white/50"
+                          "placeholder:text-gray-400"
                         )}
                       />
                     </div>
@@ -467,7 +461,7 @@ const BookingForm = () => {
                 </div>
 
                 {submitMessage && (
-                  <div className="text-center mt-4 text-white">
+                  <div className="text-center mt-4 text-gray-700">
                     {submitMessage}
                   </div>
                 )}
@@ -482,7 +476,7 @@ const BookingForm = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <p className="text-white/70 flex items-center justify-center gap-2">
+          <p className="text-gray-700 flex items-center justify-center gap-2">
             <Calendar className="w-5 h-5 text-[#FF6B2C]" />
             Next available session:{" "}
             <span className="font-semibold text-[#FF6B2C]">June 15, 2024</span>
