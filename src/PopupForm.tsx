@@ -15,42 +15,75 @@ interface PopupFormProps {
 
 const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
-    fullName: "",
-    contactNumber: "",
+    name: "",
+    phone: "",
     city: "",
     state: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.fullName.trim()) newErrors.fullName = "Name is required";
-    if (!formData.contactNumber.trim()) {
-      newErrors.contactNumber = "Contact number is required";
-    } else if (!/^\d{10}$/.test(formData.contactNumber)) {
-      newErrors.contactNumber = "Please enter a valid 10-digit number";
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Contact number is required";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = "Please enter a valid 10-digit number";
     }
     if (!formData.city.trim()) newErrors.city = "City is required";
     if (!formData.state.trim()) newErrors.state = "State is required";
     return newErrors;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors = validate();
+
+    // Reset submission state
+    setSubmitted(false);
+    setSubmitMessage("");
+
     if (Object.keys(newErrors).length === 0) {
-      setSubmitted(true);
-      setTimeout(() => {
+      setIsSubmitting(true);
+
+      try {
+        await fetch(
+          "https://script.google.com/macros/s/AKfycbwhK2Znwu2Z5HkKEzgwpkK7F8Eafy0rxSv9cFoP-ptnlykOvUn9WSTfypNlEhmy3EnQiQ/exec",
+          {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
+
+        // Since we're using no-cors, we can't access the response content
+        // We'll assume it's successful if the request doesn't throw an error
+        setSubmitted(true);
+        setSubmitMessage("Form submitted successfully!");
+
+        // Reset form after submission
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            phone: "",
+            city: "",
+            state: "",
+          });
+          onClose();
+        }, 3000);
+      } catch (error) {
+        console.error("Error submitting the form:", error);
+        setSubmitMessage("An error occurred. Please try again.");
         setSubmitted(false);
-        setFormData({
-          fullName: "",
-          contactNumber: "",
-          city: "",
-          state: "",
-        });
-        onClose();
-      }, 3000);
+      }
+
+      setIsSubmitting(false);
     } else {
       setErrors(newErrors);
     }
@@ -88,7 +121,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
             transition={{ type: "spring", damping: 15 }}
             className="w-full max-w-md"
           >
-            <Card className="bg-gradient-to-br font-poppins  from-white to-gray-100 border-[#FF6B2C]/30 shadow-2xl">
+            <Card className="bg-gradient-to-br font-poppins from-white to-gray-100 border-[#FF6B2C]/30 shadow-2xl">
               <CardHeader className="relative">
                 <Button
                   onClick={onClose}
@@ -116,10 +149,10 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     {[
-                      { name: "fullName", label: "Full Name", type: "text" },
+                      { name: "name", label: "Name", type: "text" },
                       {
-                        name: "contactNumber",
-                        label: "Contact Number",
+                        name: "phone",
+                        label: "Phone",
                         type: "tel",
                       },
                       { name: "city", label: "City", type: "text" },
@@ -135,7 +168,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                           name={field.name}
                           value={formData[field.name as keyof typeof formData]}
                           onChange={handleChange}
-                          className=" border-[#FF6B2C]/30 text-black placeholder-white focus:border-[#FF6B2C] focus:ring-[#FF6B2C]"
+                          className="border-[#FF6B2C]/30 text-black placeholder-white focus:border-[#FF6B2C] focus:ring-[#FF6B2C]"
                           placeholder={`Enter your ${field.label.toLowerCase()}`}
                         />
                         {errors[field.name] && (
@@ -148,9 +181,15 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                     <Button
                       type="submit"
                       className="w-full bg-[#FF6B2C] hover:bg-[#FF8F6B] text-white transition-colors"
+                      disabled={isSubmitting}
                     >
-                      Submit
+                      {isSubmitting ? "Submitting..." : "Submit"}
                     </Button>
+                    {submitMessage && (
+                      <p className="text-center text-sm text-[#FF6B2C]">
+                        {submitMessage}
+                      </p>
+                    )}
                   </form>
                 )}
               </CardContent>

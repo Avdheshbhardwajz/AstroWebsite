@@ -128,13 +128,28 @@ export default function Featured() {
   const featuredLogos = [
     {
       name: "Press Trust of India",
-      src: "/placeholder.svg?height=60&width=120",
+      src: "https://akm-img-a-in.tosshub.com/indiatoday/images/reporter/201804/pti_new.jpeg?VersionId=Pom4kxkCWVIuguBJOksKEW0ArP_ICIQe",
     },
-    { name: "Dainik Bhaskar", src: "/placeholder.svg?height=60&width=120" },
-    { name: "Indore Dil Se", src: "/placeholder.svg?height=60&width=120" },
-    { name: "Khabar Live", src: "/placeholder.svg?height=60&width=120" },
-    { name: "Times Tech", src: "/placeholder.svg?height=60&width=120" },
-    { name: "DD News", src: "/placeholder.svg?height=60&width=120" },
+    {
+      name: "Dainik Bhaskar",
+      src: "https://cdn.branch.io/branch-assets/1584531581578-og_image.png",
+    },
+    {
+      name: "Indore Dil Se",
+      src: "https://hoblist.s3.ap-south-1.amazonaws.com/favorite/others/1622742668563_DD%20News.jpg",
+    },
+    {
+      name: "Khabar Live",
+      src: "https://is2-ssl.mzstatic.com/image/thumb/Purple62/v4/88/8b/f8/888bf8d4-ee0a-0ff6-ef35-175d0b837288/source/512x512bb.jpg",
+    },
+    {
+      name: "Aaj Tak",
+      src: "https://upload.wikimedia.org/wikipedia/commons/2/28/Aaj_tak_logo.png",
+    },
+    {
+      name: "Amar Ujala",
+      src: "https://th.bing.com/th/id/R.bcf0f0be2311b18dae498b5b1ff180db?rik=dQdVlgCouGuLtA&riu=http%3a%2f%2f2.bp.blogspot.com%2f-91e2PSMrZjE%2fTvSUGtNlGDI%2fAAAAAAAAD6U%2fiA-rHM7NIx8%2fs1600%2famar-ujala-logo.gif&ehk=aiuglMepEKKElm8TIuScORmoaivbXNMscTfI81DDKQs%3d&risl=&pid=ImgRaw&r=0",
+    },
   ];
 
   const questions = [

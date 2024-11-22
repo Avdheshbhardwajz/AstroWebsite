@@ -129,7 +129,7 @@ import { motion } from "framer-motion";
 import { ScrollText, Book, Star, Sparkles } from "lucide-react";
 import { Card, CardContent } from "./components/ui/card";
 import { Badge } from "./components/ui/badge";
-
+import img from "/MentorImage.jpg";
 export default function TrainerProfile() {
   const achievements = [
     { icon: ScrollText, text: "Expert in Vedic Astrology & Numerology." },
@@ -169,7 +169,7 @@ export default function TrainerProfile() {
               <CardContent className="p-0">
                 <div className="relative">
                   <img
-                    src="/placeholder.svg?height=600&width=500"
+                    src={img}
                     alt=" ADVANCED TECHNIQUES "
                     className="w-full object-cover rounded-lg transform hover:scale-105 transition-transform duration-500"
                   />
