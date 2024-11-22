@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Calendar, Clock, Globe, Video, Check, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
-import heroImage from "/heroSection.jpg";
+import heroImage from "../public/heroImage.jpg";
 
 export default function HeroSection() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
