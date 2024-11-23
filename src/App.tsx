@@ -10,6 +10,7 @@ import IntroductionSection from "./IntroSection";
 import HowItWorks from "./HowItWorks";
 import TestimonialsSection from "./TestimonialSection";
 import TrainerProfile from "./TrainerProfile";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 const App: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -29,6 +30,7 @@ const App: React.FC = () => {
       <Faq />
       <FixedButton openPopup={openPopup} />
       <PopupForm isOpen={isPopupOpen} onClose={closePopup} />
+      <PrivacyPolicy />
     </div>
   );
 };
