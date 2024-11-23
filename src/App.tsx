@@ -11,16 +11,6 @@ import HowItWorks from "./HowItWorks";
 import TestimonialsSection from "./TestimonialSection";
 import TrainerProfile from "./TrainerProfile";
 
-// Define interfaces for props
-// interface PopupProps {
-//   openPopup: () => void;
-// }
-
-// interface PopupFormProps {
-//   isOpen: boolean;
-//   onClose: () => void;
-// }
-
 const App: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -29,13 +19,13 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <HeroSection />
+      <HeroSection openPopup={openPopup} />
       <Featured />
       <HowItWorks />
       <TestimonialsSection />
       <IntroductionSection />
       <TrainerProfile />
-      <BookingForm />
+      {/* <BookingForm /> */}
       <Faq />
       <FixedButton openPopup={openPopup} />
       <PopupForm isOpen={isPopupOpen} onClose={closePopup} />

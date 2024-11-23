@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br  py-16 px-4 overflow-hidden font-poppins">
+    <section className="relative bg-gradient-to-br from-white to-gray-100 py-16 px-4 overflow-hidden font-poppins">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGNkIyQyIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
 
       <motion.div
@@ -78,13 +78,13 @@ export default function TestimonialsSection() {
               <Card className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 backdrop-blur-sm hover:border-[#FF6B2C] transition-all duration-300 group hover:shadow-lg hover:shadow-[#FF6B2C]/20">
                 <CardContent className="p-0">
                   <div
-                    className="relative cursor-pointer"
+                    className="relative cursor-pointer aspect-video"
                     onClick={() => handleVideoClick(testimonial.videoId)}
                   >
                     <img
                       src={`https://img.youtube.com/vi/${testimonial.videoId}/0.jpg`}
                       alt={`${testimonial.name}'s testimonial`}
-                      className="w-full h-48 object-cover rounded-t-lg"
+                      className="w-full h-full object-cover rounded-t-lg"
                     />
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all duration-300">
                       <motion.div
@@ -120,7 +120,7 @@ export default function TestimonialsSection() {
                     <img
                       src={testimonial.imageSrc}
                       alt="Student feedback"
-                      className="w-full aspect-[4/3] object-cover rounded-t-lg"
+                      className="w-full h-auto rounded-t-lg"
                     />
                   </div>
                 </CardContent>

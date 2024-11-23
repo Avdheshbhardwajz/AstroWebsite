@@ -5,10 +5,20 @@ import { motion } from "framer-motion";
 import { Calendar, Clock, Globe, Video, Check, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
-import heroImage from "../public/heroImage.jpg";
+import heroImage from "/heroImage.jpg";
 
-export default function HeroSection() {
+interface FixedButtonProps {
+  openPopup: () => void;
+}
+
+export default function HeroSection({
+  openPopup,
+}: FixedButtonProps): JSX.Element {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
+
+  const handleButtonClick = () => {
+    openPopup();
+  };
 
   function getTimeLeft() {
     const difference = +new Date("2024-11-25T18:00:00") - +new Date();
@@ -170,7 +180,10 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <Button className="w-full bg-[#FF6B2C] hover:bg-[#FF6B2C]/90 text-white font-bold text-lg sm:text-xl py-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center">
+            <Button
+              onClick={handleButtonClick}
+              className="w-full bg-[#FF6B2C] hover:bg-[#FF6B2C]/90 text-white font-bold text-lg sm:text-xl py-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center"
+            >
               REGISTER NOW FOR FREE
               <ArrowRight className="ml-2 h-6 w-6" />
             </Button>
