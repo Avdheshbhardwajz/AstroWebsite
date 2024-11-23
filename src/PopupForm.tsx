@@ -25,6 +25,8 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
 
+  const whatsappGroupLink = "https://chat.whatsapp.com/BNIzWg3NLVI9GbLNHF9XDU";
+
   const validate = () => {
     const newErrors: Record<string, string> = {};
     if (!formData.name.trim()) newErrors.name = "Name is required";
@@ -67,16 +69,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
         setSubmitted(true);
         setSubmitMessage("Form submitted successfully!");
 
-        // Reset form after submission
-        setTimeout(() => {
-          setFormData({
-            name: "",
-            phone: "",
-            city: "",
-            state: "",
-          });
-          onClose();
-        }, 3000);
+        // We don't reset the form or close the popup immediately anymore
       } catch (error) {
         console.error("Error submitting the form:", error);
         setSubmitMessage("An error occurred. Please try again.");
@@ -142,9 +135,22 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                     className="text-center"
                   >
                     <Sparkles className="w-16 h-16 text-[#FF6B2C] mx-auto mb-4" />
-                    <p className="text-black text-lg">
+                    <p className="text-black text-lg mb-4">
                       Your details have been successfully submitted.
                     </p>
+                    <p className="text-black text-lg mb-4">
+                      Join our WhatsApp group for further updates:
+                    </p>
+                    <a
+                      href={whatsappGroupLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block w-full"
+                    >
+                      <Button className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white transition-colors">
+                        Join WhatsApp Group
+                      </Button>
+                    </a>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">

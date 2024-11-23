@@ -8,7 +8,7 @@ export default function Navbar({ openPopup }: { openPopup: () => void }) {
 
   return (
     <nav className="bg-[#062031] shadow-lg font-poppins">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
@@ -21,7 +21,7 @@ export default function Navbar({ openPopup }: { openPopup: () => void }) {
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
             <Button
               onClick={openPopup}
-              className="bg-[#FF6B2C] hover:bg-[#FF6B2C]/90 text-white font-bold px-4 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+              className="bg-[#FF6B2C] hover:bg-[#FF6B2C]/90 text-white font-bold px-4 py-2 rounded-sm transition-all duration-300 ease-in-out transform hover:scale-105"
             >
               Register Now
             </Button>
