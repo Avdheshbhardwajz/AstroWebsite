@@ -10,7 +10,11 @@ import img2 from "/Student feedback  (2).jpg";
 import img3 from "/Student feedback .jpg";
 import img4 from "/Student feedback.jpg";
 
-export default function TestimonialsSection() {
+interface FixedButtonProps {
+  openPopup: () => void;
+}
+
+export default function TestimonialsSection({ openPopup }: FixedButtonProps) {
   const videoTestimonials = [
     {
       videoId: "tW3drSBFMek",
@@ -45,6 +49,9 @@ export default function TestimonialsSection() {
     window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
   };
 
+  const handleButtonClick = () => {
+    openPopup();
+  };
   return (
     <section className="relative bg-gradient-to-br from-white to-gray-100 py-16 px-4 overflow-hidden font-poppins">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGNkIyQyIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
@@ -135,7 +142,10 @@ export default function TestimonialsSection() {
           transition={{ delay: 1.2 }}
           className="text-center space-y-6"
         >
-          <Button className="bg-[#FF6B2C] hover:bg-[#FF8F6B] text-white font-bold text-lg sm:text-xl px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B2C]/50 flex items-center justify-center gap-2">
+          <Button
+            onClick={handleButtonClick}
+            className="bg-[#FF6B2C] hover:bg-[#FF8F6B] text-white font-bold text-lg sm:text-xl px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B2C]/50 flex items-center justify-center gap-2"
+          >
             REGISTER NOW FOR FREE
             <ArrowRight className="h-6 w-6" />
           </Button>

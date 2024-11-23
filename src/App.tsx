@@ -20,10 +20,10 @@ const App: React.FC = () => {
   return (
     <div>
       <HeroSection openPopup={openPopup} />
-      <Featured />
-      <HowItWorks />
-      <TestimonialsSection />
-      <IntroductionSection />
+      <Featured openPopup={openPopup} />
+      <HowItWorks openPopup={openPopup} />
+      <TestimonialsSection openPopup={openPopup} />
+      <IntroductionSection openPopup={openPopup} />
       <TrainerProfile />
       {/* <BookingForm /> */}
       <Faq />

@@ -117,7 +117,11 @@ import { Button } from "./components/ui/button";
 import { Card, CardContent } from "./components/ui/card";
 import { Progress } from "./components/ui/progress";
 
-export default function WhoCanBenefitSection() {
+interface FixedButtonProps {
+  openPopup: () => void;
+}
+
+export default function WhoCanBenefitSection({ openPopup }: FixedButtonProps) {
   const beneficiaries = [
     {
       text: " If you’re someone who is thinking about turning astrology into a full-time career and offering professional consultations, this webinar is for you.",
@@ -144,7 +148,9 @@ export default function WhoCanBenefitSection() {
       text: " If you’re a student or young adult unsure about your future career path, exploring your astrological chart can offer clarity and help guide you toward the right direction",
     },
   ];
-
+  const handleButtonClick = () => {
+    openPopup();
+  };
   return (
     <section className="relative font-poppins bg-gradient-to-br from-white to-gray-100 py-16 px-4 overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGNkIyQyIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
@@ -199,7 +205,10 @@ export default function WhoCanBenefitSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center space-y-6"
         >
-          <Button className="bg-[#FF6B2C] hover:bg-[#FF8F6B] text-white font-bold text-lg sm:text-xl px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B2C]/50 flex items-center justify-center gap-2">
+          <Button
+            onClick={handleButtonClick}
+            className="bg-[#FF6B2C] hover:bg-[#FF8F6B] text-white font-bold text-lg sm:text-xl px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B2C]/50 flex items-center justify-center gap-2"
+          >
             REGISTER NOW FOR FREE
             <ArrowRight className="h-6 w-6" />
           </Button>

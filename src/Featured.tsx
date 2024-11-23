@@ -124,7 +124,11 @@ import { Button } from "./components/ui/button";
 import { Card, CardContent } from "./components/ui/card";
 import { Progress } from "./components/ui/progress";
 
-export default function Featured() {
+interface FixedButtonProps {
+  openPopup: () => void;
+}
+
+export default function Featured({ openPopup }: FixedButtonProps) {
   const featuredLogos = [
     {
       name: "Press Trust of India",
@@ -160,6 +164,10 @@ export default function Featured() {
     "Are you looking for a side hustle that's both fulfilling and flexible, where you can help others while making money, all without quitting your current job?",
     "Do you want to pursue a career in astrology, but don't know where to start?",
   ];
+
+  const handleButtonClick = () => {
+    openPopup();
+  };
 
   return (
     <section className="relative bg-gradient-to-br from-white to-gray-100 py-16 px-4 overflow-hidden font-poppins">
@@ -232,7 +240,10 @@ export default function Featured() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center space-y-4"
         >
-          <Button className="bg-[#FF6B2C] hover:bg-[#FF6B2C]/90 text-white font-bold text-lg sm:text-xl px-6 sm:px-8 py-4 sm:py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105">
+          <Button
+            onClick={handleButtonClick}
+            className="bg-[#FF6B2C] hover:bg-[#FF6B2C]/90 text-white font-bold text-lg sm:text-xl px-6 sm:px-8 py-4 sm:py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105"
+          >
             REGISTER NOW FOR FREE
           </Button>
           <div className="max-w-md mx-auto space-y-2">

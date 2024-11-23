@@ -282,7 +282,11 @@ import { Button } from "./components/ui/button";
 import { Progress } from "./components/ui/progress";
 import { Card, CardContent } from "./components/ui/card";
 
-export default function HowItWorks() {
+interface FixedButtonProps {
+  openPopup: () => void;
+}
+
+export default function HowItWorks({ openPopup }: FixedButtonProps) {
   const features = [
     {
       icon: Video,
@@ -308,6 +312,10 @@ export default function HowItWorks() {
         "Clear all your doubts in an extensive session, ensuring you can implement what you've learned with ease",
     },
   ];
+
+  const handleButtonClick = () => {
+    openPopup();
+  };
 
   return (
     <section className="relative font-poppins bg-gradient-to-br from-white to-gray-100 py-16 px-4 overflow-hidden">
@@ -386,7 +394,10 @@ export default function HowItWorks() {
           transition={{ delay: 0.7 }}
           className="text-center space-y-6"
         >
-          <Button className="bg-[#FF6B2C] hover:bg-[#FF8F6B] text-white font-bold text-lg sm:text-xl px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B2C]/50 flex items-center justify-center gap-2">
+          <Button
+            onClick={handleButtonClick}
+            className="bg-[#FF6B2C] hover:bg-[#FF8F6B] text-white font-bold text-lg sm:text-xl px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B2C]/50 flex items-center justify-center gap-2"
+          >
             REGISTER NOW FOR FREE
             <ArrowRight className="h-6 w-6" />
           </Button>
