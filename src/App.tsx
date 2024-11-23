@@ -11,6 +11,7 @@ import HowItWorks from "./HowItWorks";
 import TestimonialsSection from "./TestimonialSection";
 import TrainerProfile from "./TrainerProfile";
 import PrivacyPolicy from "./PrivacyPolicy";
+import Navbar from "./Navbar";
 
 const App: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -20,6 +21,7 @@ const App: React.FC = () => {
 
   return (
     <div>
+      <Navbar openPopup={openPopup} />
       <HeroSection openPopup={openPopup} />
       <Featured openPopup={openPopup} />
       <HowItWorks openPopup={openPopup} />
