@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Faq from "./Faq";
 import FixedButton from "./FixedButton";
-import BookingForm from "./BookingForm";
+
 import PopupForm from "./PopupForm";
 import HeroSection from "./HeroSection";
 import Featured from "./Featured";
