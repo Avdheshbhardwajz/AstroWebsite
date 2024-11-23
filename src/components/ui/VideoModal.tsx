@@ -1,4 +1,3 @@
-import React from "react";
 import YouTube from "react-youtube";
 import { Dialog, DialogContent, DialogClose } from "./dialog";
 import { X } from "lucide-react";
