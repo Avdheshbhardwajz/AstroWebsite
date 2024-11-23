@@ -28,7 +28,7 @@ const App: React.FC = () => {
       <TestimonialsSection openPopup={openPopup} />
       <IntroductionSection openPopup={openPopup} />
       <TrainerProfile />
-      {/* <BookingForm /> */}
+
       <Faq />
       <FixedButton openPopup={openPopup} />
       <PopupForm isOpen={isPopupOpen} onClose={closePopup} />

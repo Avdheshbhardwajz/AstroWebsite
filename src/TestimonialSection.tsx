@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Play, ArrowRight } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Progress } from "./components/ui/progress";
 import { Card, CardContent } from "./components/ui/card";
+import { VideoModal } from "./components/ui/VideoModal";
 import img1 from "/Student feedback  (1).jpg";
 import img2 from "/Student feedback  (2).jpg";
 import img3 from "/Student feedback .jpg";
@@ -15,6 +17,8 @@ interface FixedButtonProps {
 }
 
 export default function TestimonialsSection({ openPopup }: FixedButtonProps) {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+
   const videoTestimonials = [
     {
       videoId: "tW3drSBFMek",
@@ -46,12 +50,17 @@ export default function TestimonialsSection({ openPopup }: FixedButtonProps) {
   ];
 
   const handleVideoClick = (videoId: string) => {
-    window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
+    setSelectedVideo(videoId);
+  };
+
+  const handleCloseVideo = () => {
+    setSelectedVideo(null);
   };
 
   const handleButtonClick = () => {
     openPopup();
   };
+
   return (
     <section className="relative bg-gradient-to-br from-white to-gray-100 py-16 px-4 overflow-hidden font-poppins">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGNkIyQyIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
@@ -162,6 +171,14 @@ export default function TestimonialsSection({ openPopup }: FixedButtonProps) {
 
       <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-[#FF6B2C] rounded-full filter blur-3xl opacity-20 animate-pulse" />
       <div className="absolute -top-20 -left-20 w-40 h-40 bg-[#FF6B2C] rounded-full filter blur-3xl opacity-20 animate-pulse" />
+
+      {selectedVideo && (
+        <VideoModal
+          isOpen={!!selectedVideo}
+          onClose={handleCloseVideo}
+          videoId={selectedVideo}
+        />
+      )}
     </section>
   );
 }
