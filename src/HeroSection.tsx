@@ -21,7 +21,7 @@ export default function HeroSection({
   };
 
   function getTimeLeft() {
-    const difference = +new Date("2024-11-25T18:00:00") - +new Date();
+    const difference = +new Date("2024-11-30T18:00:00") - +new Date();
     let timeLeft = {
       days: "00",
       hours: "00",
@@ -68,7 +68,7 @@ export default function HeroSection({
         className="max-w-7xl mx-auto relative z-10"
       >
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          {/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Turn Your Passion for{" "}
             <span className="text-[#FF6B2C]">
               Astrology into a Profitable Career
@@ -77,10 +77,30 @@ export default function HeroSection({
             <span className="underline decoration-2 decoration-[#FF6B2C]">
               Proven Techniques in Just 2 Days!
             </span>
+          </h1> */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            Turn Your <span className="text-[#FF6B2C]">Passion</span> for{" "}
+            <span className="text-[#FF6B2C]">Astrology</span> into a{" "}
+            <span className="text-[#FF6B2C]">Profitable Career</span> Using{" "}
+            <span className="relative">
+              Proven
+              <span className="absolute bottom-1 left-0 w-full h-[3px] bg-[#FF6B2C]"></span>
+            </span>{" "}
+            <span className="relative">
+              Techniques
+              <span className="absolute bottom-1 left-0 w-full h-[3px] bg-[#FF6B2C]"></span>
+            </span>{" "}
+            in <span className="text-[#FF6B2C]">Just 2 Days</span>
+            <span className="text-[#FF6B2C]">!</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl">
-            Master the Secrets of Predictive Astrology in Just 2 Days– Join Our
-            Free Live Webinar to{" "}
+            Master the Secrets of{" "}
+            <span className="text-[#FF6B2C] font-bold">
+              Predictive Astrology
+            </span>{" "}
+            in Just 2 Days– Join Our{" "}
+            <span className="text-[#FF6B2C] font-bold">Free Live Webinar</span>{" "}
+            to{" "}
             <span className="text-[#FF6B2C] font-semibold">
               Unlock Personal Growth
             </span>{" "}
@@ -105,7 +125,7 @@ export default function HeroSection({
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Calendar, label: "DATE", value: "25th NOV 2024" },
+                { icon: Calendar, label: "DATE", value: "30th NOV 2024" },
                 { icon: Clock, label: "TIME", value: "6 PM" },
                 { icon: Globe, label: "LANGUAGE", value: "Hindi & English" },
                 { icon: Video, label: "LOCATION", value: "ZOOM" },
