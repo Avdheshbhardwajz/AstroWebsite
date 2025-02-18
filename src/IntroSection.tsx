@@ -6,36 +6,52 @@
 // import { Card, CardContent } from "./components/ui/card";
 // import { Progress } from "./components/ui/progress";
 
-// export default function WhoCanBenefitSection() {
+// interface FixedButtonProps {
+//   openPopup: () => void;
+// }
+
+// interface IntroductionSectionProps {
+//   openPopup: () => void;
+//   data?: {
+//     title: string;
+//     subtitle: string;
+//     beneficiaries: Array<{
+//       text: string;
+//     }>;
+//   };
+// }
+// export default function WhoCanBenefitSection({ openPopup }: FixedButtonProps) {
 //   const beneficiaries = [
 //     {
-//       text: "Aspiring Astrologers: If you're thinking about turning astrology into a full-time career, this webinar will give you the insights and tools to start offering professional consultations and building your astrology practice.",
+//       text: " If you’re someone who is thinking about turning astrology into a full-time career and offering professional consultations, this webinar is for you.",
 //     },
 //     {
-//       text: "Side Income Seekers: If you're looking to earn extra income alongside your regular job, astrology can be a rewarding side hustle. Learn how to start offering consultations and turn your passion into a profitable endeavor.",
+//       text: "If you’re looking to earn extra income alongside your regular job and want to explore astrology as a profitable side hustle, this is for you.",
 //     },
 //     {
-//       text: "Astrology Beginners and Enthusiasts: Whether you're just starting to explore the world of astrology or you're looking to deepen your existing knowledge, this session is perfect for all levels.",
+//       text: "If you’re just beginning your astrology journey or seeking to deepen your understanding, this webinar has something valuable for you.",
 //     },
 //     {
-//       text: "Personal Growth Seekers: If you're on a journey of self-discovery and want to understand how the planetary influences shape your life, this webinar will offer valuable insights for personal and spiritual growth.",
+//       text: " If you’re on a path of self-discovery and wish to understand how planetary influences shape your life, this is the perfect opportunity for you.",
 //     },
 //     {
-//       text: "Professionals Seeking a New Perspective: Entrepreneurs, business leaders, and decision-makers looking to incorporate astrology into their strategic planning and enhance their approach to life and work will find this session highly beneficial.",
+//       text: "If you’re aiming to incorporate astrology into your professional life and enhance your decision-making and strategy, this webinar is tailored for you.",
 //     },
 //     {
-//       text: "Those Navigating Relationships: If you're struggling with relationship challenges or simply want to understand others better, astrology can provide powerful insights to help foster stronger, more harmonious connections.",
+//       text: " If you’re facing challenges in your relationships or want to understand others better, this is an ideal resource for you.",
 //     },
 //     {
-//       text: "Wellness Enthusiasts: For those interested in exploring alternative ways to boost your mental and physical health, astrology offers a holistic perspective that can complement your wellness practices.",
+//       text: " If you’re looking for alternative ways to boost your mental and physical health through astrology, this webinar is designed with you in mind",
 //     },
 //     {
-//       text: "Students at a Career Crossroad: If you're a student or young adult trying to make sense of your future career path, understanding your astrological chart can provide you with clarity and guidance on your best direction.",
+//       text: " If you’re a student or young adult unsure about your future career path, exploring your astrological chart can offer clarity and help guide you toward the right direction",
 //     },
 //   ];
-
+//   const handleButtonClick = () => {
+//     openPopup();
+//   };
 //   return (
-//     <section className="relative font-poppins bg-gradient-to-br from-[#1B2B3B] to-[#0F1922] py-16 px-4 overflow-hidden">
+//     <section className="relative font-poppins bg-gradient-to-br from-white to-gray-100 py-16 px-4 overflow-hidden">
 //       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGNkIyQyIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
 
 //       <motion.div
@@ -45,13 +61,13 @@
 //         className="max-w-6xl mx-auto relative z-10"
 //       >
 //         <div className="text-center mb-12">
-//           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
+//           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
 //             Who Can Benefit from{" "}
 //             <span className="text-[#FF6B2C] bg-gradient-to-r from-[#FF6B2C] to-[#FF8F6B] bg-clip-text text-transparent">
 //               This Webinar?
 //             </span>
 //           </h2>
-//           <p className="text-lg md:text-xl text-white/80 max-w-4xl mx-auto">
+//           <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto">
 //             We've guided individuals like you to harness the wisdom of Vedic
 //             Astrology, empowering them with natural, time-tested techniques that
 //             not only enhance their understanding of life's patterns but also
@@ -68,12 +84,12 @@
 //               animate={{ opacity: 1, x: 0 }}
 //               transition={{ delay: index * 0.1 }}
 //             >
-//               <Card className="bg-[#1B2B3B]/50 border-[#FF6B2C]/30 backdrop-blur-sm hover:border-[#FF6B2C] transition-all duration-300 group hover:shadow-lg hover:shadow-[#FF6B2C]/20">
+//               <Card className="bg-[#062031] border-[#FF6B2C]/30 hover:border-[#FF6B2C] transition-all duration-300 group hover:shadow-lg hover:shadow-[#FF6B2C]/20">
 //                 <CardContent className="p-4 sm:p-6 flex items-start gap-4">
 //                   <div className="bg-[#FF6B2C] rounded-lg p-2 flex-shrink-0 group-hover:bg-[#FF8F6B] transition-colors">
 //                     <Check className="h-5 w-5 text-white" />
 //                   </div>
-//                   <p className="text-white/80 group-hover:text-white transition-colors">
+//                   <p className="text-white group-hover:text-[#FF6B2C] transition-colors">
 //                     {beneficiary.text}
 //                   </p>
 //                 </CardContent>
@@ -86,9 +102,12 @@
 //           initial={{ opacity: 0, y: 20 }}
 //           animate={{ opacity: 1, y: 0 }}
 //           transition={{ duration: 0.8, delay: 0.4 }}
-//           className="text-center space-y-6"
+//           className="text-center space-y-6 flex flex-col items-center justify-center"
 //         >
-//           <Button className="bg-[#FF6B2C] hover:bg-[#FF8F6B] text-white font-bold text-lg sm:text-xl px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B2C]/50 flex items-center justify-center gap-2">
+//           <Button
+//             onClick={handleButtonClick}
+//             className="bg-[#FF6B2C] hover:bg-[#FF8F6B] text-white font-bold text-lg sm:text-xl px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B2C]/50 flex items-center justify-center gap-2"
+//           >
 //             REGISTER NOW FOR FREE
 //             <ArrowRight className="h-6 w-6" />
 //           </Button>
@@ -110,47 +129,39 @@
 // }
 
 "use client";
-
+import React from "react";
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Card, CardContent } from "./components/ui/card";
 import { Progress } from "./components/ui/progress";
 
-interface FixedButtonProps {
+interface IntroductionSectionProps {
   openPopup: () => void;
+  data?: {
+    title: string;
+    subtitle: string;
+    beneficiaries: Array<{
+      text: string;
+    }>;
+  };
 }
 
-export default function WhoCanBenefitSection({ openPopup }: FixedButtonProps) {
-  const beneficiaries = [
-    {
-      text: " If you’re someone who is thinking about turning astrology into a full-time career and offering professional consultations, this webinar is for you.",
-    },
-    {
-      text: "If you’re looking to earn extra income alongside your regular job and want to explore astrology as a profitable side hustle, this is for you.",
-    },
-    {
-      text: "If you’re just beginning your astrology journey or seeking to deepen your understanding, this webinar has something valuable for you.",
-    },
-    {
-      text: " If you’re on a path of self-discovery and wish to understand how planetary influences shape your life, this is the perfect opportunity for you.",
-    },
-    {
-      text: "If you’re aiming to incorporate astrology into your professional life and enhance your decision-making and strategy, this webinar is tailored for you.",
-    },
-    {
-      text: " If you’re facing challenges in your relationships or want to understand others better, this is an ideal resource for you.",
-    },
-    {
-      text: " If you’re looking for alternative ways to boost your mental and physical health through astrology, this webinar is designed with you in mind",
-    },
-    {
-      text: " If you’re a student or young adult unsure about your future career path, exploring your astrological chart can offer clarity and help guide you toward the right direction",
-    },
-  ];
+export default function WhoCanBenefitSection({
+  openPopup,
+  data,
+}: IntroductionSectionProps) {
   const handleButtonClick = () => {
     openPopup();
   };
+
+  // Use data from props, fallback to empty arrays/strings if not provided
+  const title = data?.title || "Who Can Benefit from This Webinar?";
+  const subtitle =
+    data?.subtitle ||
+    "We've guided individuals like you to harness the wisdom of Vedic Astrology, empowering them with natural, time-tested techniques that not only enhance their understanding of life's patterns but also help them build a meaningful career, assist others, and unlock personal clarity and confidence.";
+  const beneficiaries = data?.beneficiaries || [];
+
   return (
     <section className="relative font-poppins bg-gradient-to-br from-white to-gray-100 py-16 px-4 overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSI1MiI+CjxwYXRoIGQ9Ik0yNiAwIEwzOSAyNiBMMjYgNTIgTDEzIDI2IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGNkIyQyIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgo8L3N2Zz4=')] opacity-30" />
@@ -163,17 +174,21 @@ export default function WhoCanBenefitSection({ openPopup }: FixedButtonProps) {
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-            Who Can Benefit from{" "}
-            <span className="text-[#FF6B2C] bg-gradient-to-r from-[#FF6B2C] to-[#FF8F6B] bg-clip-text text-transparent">
-              This Webinar?
-            </span>
+            {title.split("from").map((part, index) => (
+              <React.Fragment key={index}>
+                {index > 0 && "from"}
+                {index > 0 ? (
+                  <span className="text-[#FF6B2C] bg-gradient-to-r from-[#FF6B2C] to-[#FF8F6B] bg-clip-text text-transparent">
+                    {part}
+                  </span>
+                ) : (
+                  part
+                )}
+              </React.Fragment>
+            ))}
           </h2>
           <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto">
-            We've guided individuals like you to harness the wisdom of Vedic
-            Astrology, empowering them with natural, time-tested techniques that
-            not only enhance their understanding of life's patterns but also
-            help them build a meaningful career, assist others, and unlock
-            personal clarity and confidence.
+            {subtitle}
           </p>
         </div>
 
@@ -203,7 +218,7 @@ export default function WhoCanBenefitSection({ openPopup }: FixedButtonProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center space-y-6"
+          className="text-center space-y-6 flex flex-col items-center justify-center"
         >
           <Button
             onClick={handleButtonClick}
